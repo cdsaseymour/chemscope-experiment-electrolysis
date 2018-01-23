@@ -1,0 +1,23 @@
+{
+  "name": "flametest",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "interactjs": "^1.2.9"
+  },
+  "devDependencies": {
+    "cross-env": "^5.0.5",
+    "prettier": "^1.6.1",
+    "webpack": "^3.5.5",
+    "webpack-dev-server": "^2.7.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --progress --watch",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --open",
+    "build": "webpack",
+    "prettier": "prettier --trailing-comma all --single-quote --write 'src/**.js'"
+  },
+  "author": "",
+  "license": "ISC"
+}

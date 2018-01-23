@@ -1,0 +1,615 @@
+/* Reset code for CSS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+img {
+    image-rendering: crisp-edges;
+}
+
+body {
+  background: white;
+  font-family: "Arial";
+  overflow-x: hidden;
+}
+
+/* Steps code */
+#stepsContainer {
+    position: fixed;
+    right: 5px;
+    top: 5px;
+    width: 350px;
+    height: auto;
+    background-color: #f9eb9a;
+}
+
+#stepsTitleContainer {
+    width: 100%;
+    height: 35px;
+    text-align: center;
+    font-size: 26px;
+    background-color: #EBB124;
+}
+
+#stepsTitle {
+    position: relative;
+    top: 5px;
+}
+
+#stepsMarksContainer {
+    position: relative;
+    width: 100%;
+    margin: 3px;
+    text-align: center;
+}
+
+.step {
+    position: relative;
+    width: 344px;
+    height: 50px;
+    margin-left: 3px;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    background-color: #f7c447;
+    border-radius: 3px;
+}
+
+.stepNoContainer {
+    position: relative;
+    width: 30px;
+    height: 50px;
+}
+
+.stepNo {
+    position: relative;
+    font-size: 30px;
+    top: 10px;
+    left: 5px;
+}
+
+.stepDescContainer {
+    position: relative;
+    display: table;
+    width: 250px;
+    height: 50px;
+    margin-left: 40px;
+    top: -50px;
+    line-height: 50px;
+}
+
+.stepDesc {
+    position: relative;
+    font-size: 12px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}
+
+.stepResultContainer {
+    position: relative;
+    width: 64px;
+    height: 50px;
+    margin-left: 290px;
+    top: -100px;
+}
+
+.stepResult {
+    width: 50px;
+    height: 50px
+}
+
+.stepCompleteMask {
+    position: relative;
+    width: 344px;
+    height: 50px;
+    background-color: #70ff72;
+    opacity: 0;
+    top: -150px;
+}
+
+.stepCompleteMask.stepComplete {
+    opacity: 0.3;
+    background-color: #70ff72;
+}
+
+.stepCompleteMask.stepFail {
+    opacity: 0.3;
+    background-color: #ff1012;
+}
+
+.stepCompleteMask.nohighlight {
+    opacity: 0.3;
+    background-color: #000;
+}
+
+
+/* Experiment Complete Code */
+#completeContainer {
+    display: initial;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#completeContainer.noshow {
+    display: none;
+}
+
+#completeMessageContainer {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 350px;
+    height: 115px;
+    background-color: #f9eb9a;
+}
+
+#completeMessageTitleContainer {
+    display: table;
+    width: 100%;
+    height: 35px;
+    text-align: center;
+    font-size: 26px;
+    background-color: #EBB124;
+}
+
+#completeMessageTitle {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#completeMessageMarksText {
+    position: absolute;
+    font-size: 24px;
+    top: 38%;
+    left: 15px;
+} 
+
+#completeMessageMarks {
+    position: absolute;
+    font-size: 64px;
+    right: 15px;
+    top: 38%;
+}
+
+
+/* Hint code */
+
+#hint_container {
+  visibility: visible;
+    display: table;
+  position: fixed;
+  top: 170px;
+  right: 5px;
+  width: 270px;
+  height: 127px;
+  opacity: 1;
+  overflow: hidden;
+}
+
+#hint_container::before {
+  content: "Using a hint will lose you 1 mark.";
+}
+
+#hint_titlebtn {
+  text-align: center;
+  width: 100%;
+  background-color: #FCDC25;
+  height: 37px;
+  text-decoration: none;
+  border: 1px solid #EBB124;
+  color: black;
+  border-radius: 5px;
+}
+#hint_titlebtn:disabled {
+  background-color: #f9e7bd;
+  color: #fff;
+  border: 1px solid #f9e7bd;
+}
+
+#hint_title {
+  margin: 0px;
+  font-size: 20px;
+}
+
+#hint_content {
+  visibility: hidden;
+  margin: 0px;
+  padding: 0px;
+  height: 50px;
+  width: 100%;
+  background-color: #EBB124;
+}
+
+#hint_contentp {
+    margin: 0px;
+}
+#flameColour_container {
+  visibility: visible;
+  position: absolute;
+  margin: auto;
+  top: 225px;
+  left: 325px;
+  right: 0;
+  background-color: #EBB124;
+  height: 35px;
+  width: 210px;
+  transition: 0.5s width;
+  border-radius: 5px;
+}
+
+#flameColour_container.noshow {
+  visibility: hidden;
+  width: 0px;
+}
+
+#flameColour {
+  margin: 3px;
+  color: white;
+  text-align: center;
+}
+
+/* Answer code */
+#answer_container {
+  visibility: visible;
+  position: fixed;
+  top: 285px;
+  right: 5px;
+  width: 270px;
+  height: 62px;
+  opacity: 1;
+  overflow: hidden;
+  background: #FCDC25;
+  transition: 0.75s right;
+  border-radius: 5px;
+}
+
+#answer_container.result {
+  transition: 1s height ease-in-out;
+  height: 170px;
+}
+
+#answer_container.noshow {
+  visibility: hidden;
+  right: -250px;
+}
+
+#answer_title {
+  width: 100%;
+  height: 30px;
+  background-color: #EBB124;
+  text-align: center;
+}
+
+#answer_title h2 {
+  margin: 0px;
+}
+
+#answer_content {
+  margin: 3px;
+}
+
+#answer_text {
+  height: 20px;
+  width: 200px;
+}
+
+#answer_submit {
+    height: 26px;
+    top: -1px;
+    border: 1px solid #707070;
+    margin: 0px; 
+}
+
+#answer_result {
+  display: block;
+  margin: 5px auto;
+  right: 0;
+  width: 100px;
+  height: 100px;
+}
+
+/* Questions code */
+#questions_container {
+  display: initial;
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  width: 750px;
+  height: 156px;
+  bottom: 50px;
+}
+
+#questions_container.noshow {
+  display: none;
+}
+
+.questioncontainer {
+  width: 100%;
+  height: 50px;
+  background-color: #EBB124;
+  margin-bottom: 6px;
+  margin-top: 0px;
+  border-radius: 5px;
+}
+
+.question {
+  position: relative;
+  margin: 0px;
+  padding: 5px;
+  top: 10px;
+  font-family: "Arial";
+  font-size: 20px;
+}
+
+.question_text {
+  position: relative;
+  top: -20px;
+  right: 130px;
+  float: right;
+  height: 20px;
+}
+
+.question_submit {
+  position: relative;
+  float: right;
+  right: -100px;
+  top: -20px;
+  height: 26px;
+  border: 1px solid #707070;
+}
+
+.question_result {
+  position: relative;
+  float: right;
+  width: 35px;
+  height: 35px;
+  right: -210px;
+  top: -25px;
+}
+
+#chemicals {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  margin: 5px 5px;
+  width: 100%;
+  height: 100%;
+}
+
+#bunsen {
+  position: absolute;
+  width: 350px;
+  margin: 0 auto;
+  left: 168px;
+  right: 0;
+  top: 275px;
+}
+
+.chemical {
+  height: 143px;
+  width: 230px;
+}
+
+.container {
+  margin: 210px auto;
+  width: 60px;
+  height: 60px;
+  position: relative;
+  transform-origin: center bottom;
+  animation-name: flicker;
+  animation-duration: 3ms;
+  animation-delay: 200ms;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.flame {
+  bottom: 0px;
+  position: absolute;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-top-left-radius: 50%;
+  transform: rotate(-45deg) scale(1.5, 1.5);
+}
+
+.yellow {
+  left: 15px;
+  width: 30px;
+  height: 30px;
+  background: gold;
+  box-shadow: 0px 0px 9px 4px gold;
+}
+
+.yellow.hasChemical.li {
+  background: maroon;
+  box-shadow: 0px 0px 9px 4px maroon;
+}
+.yellow.hasChemical.k {
+  background: orchid;
+  box-shadow: 0px 0px 9px 4px orchid;
+}
+.yellow.hasChemical.ca {
+  background: tomato;
+  box-shadow: 0px 0px 9px 4px tomato;
+}
+.yellow.hasChemical.ba {
+  background: darkturquoise;
+  box-shadow: 0px 0px 9px 4px darkturquoise;
+}
+
+/*2nd biggest*/
+.orange {
+  left: 10px;
+  width: 40px;
+  height: 40px;
+  background: orange;
+  box-shadow: 0px 0px 9px 4px orange;
+}
+
+.orange.hasChemical.li {
+  background: brown;
+  box-shadow: 0px 0px 9px 4px brown;
+}
+.orange.hasChemical.na {
+  background: gold;
+  box-shadow: 0px 0px 9px 4px gold;
+}
+.orange.hasChemical.k {
+  background: mediumpurple;
+  box-shadow: 0px 0px 9px 4px mediumpurple;
+}
+.orange.hasChemical.ca {
+  background: orangered;
+  box-shadow: 0px 0px 9px 4px orangered;
+}
+.orange.hasChemical.ba {
+  background: lightgreen;
+  box-shadow: 0px 0px 9px 4px lightgreen;
+}
+
+/*biggest*/
+.red {
+  left: 5px;
+  width: 50px;
+  height: 50px;
+  background: OrangeRed;
+  box-shadow: 0px 0px 5px 4px OrangeRed;
+}
+
+.red.hasChemical.li {
+  background: crimson;
+  box-shadow: 0px 0px 5px 4px crimson;
+}
+.red.hasChemical.na {
+  background: yellow;
+  box-shadow: 0px 0px 5px 4px yellow;
+}
+.red.hasChemical.k {
+  background: MediumOrchid;
+  box-shadow: 0px 0px 5px 4px MediumOrchid;
+}
+.red.hasChemical.ca {
+  background: orangered;
+  box-shadow: 0px 0px 5px 4px orangered;
+}
+.red.hasChemical.ba {
+  background: lime;
+  box-shadow: 0px 0px 5px 4px lime;
+}
+
+/*smallest*/
+.white {
+  left: 15px;
+  bottom: -4px;
+  width: 30px;
+  height: 30px;
+  background: white;
+  box-shadow: 0px 0px 9px 4px white;
+}
+
+.white.hasChemical.li {
+  background: indianred;
+  box-shadow: 0px 0px 9px 4px indianred;
+}
+.white.hasChemical.k {
+  background: plum;
+  box-shadow: 0px 0px 9px 4px plum;
+}
+.white.hasChemical.ca {
+  background: lightcoral;
+  box-shadow: 0px 0px 9px 4px lightcoral;
+}
+.white.hasChemical.ba {
+  background: aquamarine;
+  box-shadow: 0px 0px 9px 4px aquamarine;
+}
+
+.circle {
+  border-radius: 50%;
+  position: absolute;
+}
+
+.blue {
+  width: 10px;
+  height: 10px;
+  left: 25px;
+  bottom: -25px;
+  background: SlateBlue;
+  box-shadow: 0px 0px 15px 10px SlateBlue;
+}
+
+.black {
+  width: 40px;
+  height: 40px;
+  left: 10px;
+  bottom: -60px;
+  background: black;
+  box-shadow: 0px 0px 15px 10px black;
+}
+
+@keyframes flicker {
+  0% {
+    transform: rotate(-1deg);
+  }
+  20% {
+    transform: rotate(1deg);
+  }
+  40% {
+    transform: rotate(-1deg);
+  }
+  60% {
+    transform: rotate(1deg) scaleY(1.04);
+  }
+  80% {
+    transform: rotate(-2deg) scaleY(0.92);
+  }
+  100% {
+    transform: rotate(1deg);
+  }
+}

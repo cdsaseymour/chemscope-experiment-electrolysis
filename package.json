@@ -1,0 +1,27 @@
+{
+  "name": "chemscope",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "interactjs": "1.2.9"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "cross-env": "^5.0.5",
+    "prettier": "^1.6.1",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.7.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --progress --watch",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --open",
+    "build": "webpack",
+    "prettier": "prettier --trailing-comma all --single-quote --write 'src/**.js'"
+  },
+  "author": "",
+  "license": "ISC"
+}

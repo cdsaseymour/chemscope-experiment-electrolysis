@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <script src="./main.bundle.js"></script>
+        <link rel="stylesheet" href="./main.css">
+    </head>
+    <body>
+        <div id="equipmentContainer">
+            <div id="hclContainer" class="equipment_row1 hcl_draggable bottle_drag-drop"></div>
+            <div id="naohContainer" class="equipment_row1 naoh_draggable bottle_drag-drop"></div>
+            <div id="polystyreneCupContainer" class="equipment_row1 polystyreneCup_draggable polystyreneCup_drag-drop">
+                <div id="measuringCylinderDropzone" class="measuringCylinder_dropzone"></div>
+                <p id="naohVolumeLabel" class="noshow">NaOH Volume: <span id="naohVolume">0cm³</span></p>
+            </div>
+            <div id="beakerContainer" class="equipment_row1 beaker_drag-drop">
+                <div id="polystyreneCupDropzone" class="polystyreneCup_dropzone"></div>
+            </div>
+            <div id="measuringCylinder50Container" class="equipment_row2 measuringCylinder50_draggable measuringCylinder_drag-drop">
+                <img id="measuringCylinder50Img" src="./images/measuringcylinders/50cm3/default.png">
+                <div id="hclDropzone" class="hcl_dropzone"></div>
+            </div>
+            <div id="measuringCylinder10Container" class="equipment_row2 measuringCylinder_drag-drop">
+                <img id="measuringCylinder10Img" src="./images/measuringcylinders/10cm3/default.png">
+                <div id="naohDropzone" class=""></div>
+            </div>
+            <div id="thermometerContainer" class="equipment_row2 thermometer_drag-drop">
+                <p id="thermometerLabel" class="label noshow">0.00°C</p>
+            </div>
+        </div>
+        <div id="workingArea">
+            <div id="beakerDropzone" class="beaker_dropzone"></div>
+            <p id="workingAreaLabel">working area</p>
+        </div>
+        <div id="stepsContainer">
+            <!-- Each 'step' div has the format:
+                  -stepNoContainer div
+                    ->stepNo p (the step number)
+                  -stepDescContainer div
+                    ->stepDesc p (the step's description)
+                  -stepResultContainer div
+                    ->stepResult img (the tick that will appear once the step is complete)
+                  -stepCompleteMask div (the mask that appears on top of a step when it's completed (green), or when it has failed (red))
+            -->
+            <div id="stepsTitleContainer">
+                <p id="stepsTitle">Experiment Procedure</p>
+            </div>
+            <div class="step" id="step1">
+                <div class="stepNoContainer">
+                    <p class="stepNo">1.</p>
+                </div>
+                <div class="stepDescContainer">
+                    <p class="stepDesc">Using the dilute hydrochloric acid and the 50cm³ measuring cylinder, measure 30cm³ of dilute hydrochloric acid and pour into the polystyrene cup.</p>
+                </div>
+                <div class="stepResultContainer">
+                    <img class="stepResult" src="./images/other/empty.png">
+                </div>
+                <div class="stepCompleteMask"></div>
+            </div>
+            <div id="stepLineBreak1" class="stepLineBreak noshow"></div>
+            <div class="step noshow" id="step2">
+                <div class="stepNoContainer">
+                    <p class="stepNo">2.</p>
+                </div>
+                <div class="stepDescContainer">
+                    <p class="stepDesc">Place the beaker inside the working area, and then stand the cup inside the beaker.  This will make it more stable.
+                    </p>
+                </div>
+                <div class="stepResultContainer">
+                    <img class="stepResult" src="./images/other/empty.png">
+                </div>
+                <div class="stepCompleteMask nohighlight"></div>
+            </div>
+            <div id="stepLineBreak2" class="stepLineBreak noshow"></div>
+            <div class="step noshow" id="step3">
+                <div class="stepNoContainer">
+                    <p class="stepNo">3.</p>
+                </div>
+                <div class="stepDescContainer">
+                    <p class="stepDesc">Hold the thermometer in the acid for at least 1 second, to measure the temperature.  Record it in the first blank column of the table.</p>
+                </div>
+                <div class="stepResultContainer">
+                    <img class="stepResult" src="./images/other/empty.png">
+                </div>
+                <div class="stepCompleteMask nohighlight"></div>
+            </div>
+            <div id="stepLineBreak3" class="stepLineBreak noshow"></div>
+            <div class="step noshow" id="step4">
+                <div class="stepNoContainer">
+                    <p class="stepNo">4.</p>
+                </div>
+                <div class="stepDescContainer">
+                    <p class="stepDesc">Put 5cm³ sodium hydroxide solution into the 10cm³ measuring cylinder and pour into the cup.
+                    </p>
+                </div>
+                <div class="stepResultContainer">
+                    <img class="stepResult" src="./images/other/empty.png">
+                </div>
+                <div class="stepCompleteMask nohighlight"></div>
+            </div>
+            <div id="stepLineBreak4" class="stepLineBreak noshow"></div>
+            <div class="step noshow" id="step5">
+                <div class="stepNoContainer">
+                    <p class="stepNo">5.</p>
+                </div>
+                <div class="stepDescContainer">
+                    <p class="stepDesc">Using the thermometer, measure the temperature of the solution in the cup. Once the reading has stopped changing, record this temperature into the next row in the table.</p>
+                </div>
+                <div class="stepResultContainer">
+                    <img class="stepResult" src="./images/other/empty.png">
+                </div>
+                <div class="stepCompleteMask nohighlight"></div>
+            </div>
+            <div id="stepLineBreak5" class="stepLineBreak noshow"></div>
+            <div class="step noshow" id="step6">
+                <div class="stepNoContainer">
+                    <p class="stepNo">6.</p>
+                </div>
+                <div class="stepDescContainer">
+                    <p class="stepDesc">Repeat steps 4 and 5 to add further 5cm³ amounts of sodium hydroxide to the cup.  A total of 40cm³ needs to be added (the last few additions should produce a temperature fall instead of a rise).</p>
+                </div>
+                <div class="stepResultContainer">
+                    <img class="stepResult" src="./images/other/empty.png">
+                </div>
+                <div class="stepCompleteMask nohighlight"></div>
+            </div>
+            <div id="stepLineBreak6" class="stepLineBreak noshow"></div>
+            <div class="step noshow" id="step7">
+                <div class="stepNoContainer">
+                    <p class="stepNo">7.</p>
+                </div>
+                <div class="stepDescContainer">
+                    <p class="stepDesc">Repeat steps 1–6 and record the results in the second blank column of the table.</p>
+                </div>
+                <div class="stepResultContainer">
+                    <img class="stepResult" src="./images/other/empty.png">
+                </div>
+                <div class="stepCompleteMask nohighlight"></div>
+            </div>
+            <div id="stepLineBreak7" class="stepLineBreak noshow"></div>
+            <div class="step noshow" id="step8">
+                <div class="stepNoContainer">
+                    <p class="stepNo">8.</p>
+                </div>
+                <div class="stepDescContainer">
+                    <p class="stepDesc">Calculate the mean maximum temperature reached for each of the sodium hydroxide volumes.  Record these means in the third blank column.</p>
+                </div>
+                <div class="stepResultContainer">
+                    <img class="stepResult" src="./images/other/empty.png">
+                </div>
+                <div class="stepCompleteMask nohighlight"></div>
+            </div>
+        </div>
+        <div id="jumpToStep">
+            <input type="text" id="jumpToStepText" style="position: fixed;right: 5px; top: 567px;width: 92px">
+            <button id="jumpToStepBtn" style="position: fixed;right: 5px;top: 593px">Jump to step</button>
+        </div>
+        <div id="helpContainer">
+            <button type="button" id="helpButton" onClick="toggleHelp();">
+                <img id="helpImg" src="./images/other/helpicon.png">
+            </button>
+            <div id="helpTitleContainer" class="noshow">
+                <p id="helpTitle">Help</p>
+            </div>
+            <div id="helpContentContainer" class="noshow">
+                <p id="helpContent"></p>
+            </div>
+        </div>
+        <button type="submit" id="tableButton" onClick="toggleTable();" disabled>table</button>
+        <div id="tableContainer" class="noshow">
+            <div id="tableTitleContainer" class="tableDragHandle">
+                <p id="tableTitle">Experiment Table</p>
+            </div>
+            <div id="tableContentContainer">
+                <!--Code generated from tablesgenerator.com/html_tables-->
+                <div class="tg-wrap">
+                    <table class="tg">
+                        <tr>
+                            <th class="tg-su7x" rowspan="2">Total  volume of sodium hydroxide   added  in cm³  </th>
+                            <th class="tg-su7x" colspan="3">Maximum temperature in °C</th>
+                        </tr>
+                        <tr>
+                            <td class="tg-gror">First Trial </td>
+                            <td class="tg-gror">Second Trial</td>
+                            <td class="tg-gror">    Mean    </td>
+                        </tr>
+                        <tr>
+                            <td class="tg-kl7f"><br>  0<br>  </td>
+                            <td class="tg-kl7f"><input type="number" id="ti_0-0" class="tableInput" onkeyup="checkTableInput(this);"></td>
+                            <td class="tg-kl7f"><input type="number" id="ti_0-1" class="tableInput" onkeyup="checkTableInput(this);" disabled></td>
+                            <td class="tg-kl7f"><input type="number" id="ti_0-2" class="tableInput" onkeyup="checkTableInput(this);" disabled></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-kl7f"><br>  5<br>  </td>
+                            <td class="tg-kl7f"><input type="number" id="ti_1-0" class="tableInput" onkeyup="checkTableInput(this);" disabled></td>
+                            <td class="tg-kl7f"><input type="number" id="ti_1-1" class="tableInput" onkeyup="checkTableInput(this);" disabled></td>
+                            <td class="tg-kl7f"><input type="number" id="ti_1-2" class="tableInput" onkeyup="checkTableInput(this);" disabled></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-kl7f"><br>  10<br>  </td>
+                            <td class="tg-kl7f"><input type="number" id="ti_2-0" class="tableInput" onkeyup="checkTableInput(this);" disabled></td>
+                            <td class="tg-kl7f"><input type="number" id="ti_2-1" class="tableInput" onkeyup="checkTableInput(this);" disabled></td>
+                            <td class="tg-kl7f"><input type="number" id="ti_2-2" class="tableInput" onkeyup="checkTableInput(this);" disabled></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-kl7f"><br>  15<br>  </td>
+                            <td class="tg-kl7f"><input type="number" id="ti_3-0" class="tableInput" onkeyup="checkTableInput(this);" disabled></td>
+                            <td class="tg-kl7f"><input type="number" id="ti_3-1" class="tableInput" onkeyup="checkTableInput(this);" disabled></td>
+                            <td class="tg-kl7f"><input type="number" id="ti_3-2" class="tableInput" onkeyup="checkTableInput(this);" disabled></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-kl7f"><br>  20<br>  </td>
+                            <td class="tg-kl7f"><input type="number" id="ti_4-0" class="tableInput" onkeyup="checkTableInput(this);" disabled></td>
+                            <td class="tg-kl7f"><input type="number" id="ti_4-1" class="tableInput" onkeyup="checkTableInput(this);" disabled></td>
+                            <td class="tg-kl7f"><input type="number" id="ti_4-2" class="tableInput" onkeyup="checkTableInput(this);" disabled></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-kl7f"><br>  25<br>  </td>
+                            <td class="tg-kl7f"><input type="number" id="ti_5-0" class="tableInput" onkeyup="checkTableInput(this);" disabled></td>
+                            <td class="tg-kl7f"><input type="number" id="ti_5-1" class="tableInput" onkeyup="checkTableInput(this);" disabled></td>
+                            <td class="tg-kl7f"><input type="number" id="ti_5-2" class="tableInput" onkeyup="checkTableInput(this);" disabled></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-kl7f"><br>  30<br>  </td>
+                            <td class="tg-kl7f"><input type="number" id="ti_6-0" class="tableInput" onkeyup="checkTableInput(this);" disabled></td>
+                            <td class="tg-kl7f"><input type="number" id="ti_6-1" class="tableInput" onkeyup="checkTableInput(this);" disabled></td>
+                            <td class="tg-kl7f"><input type="number" id="ti_6-2" class="tableInput" onkeyup="checkTableInput(this);" disabled></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-kl7f"><br>  35<br>  </td>
+                            <td class="tg-kl7f"><input type="number" id="ti_7-0" class="tableInput" onkeyup="checkTableInput(this);" disabled></td>
+                            <td class="tg-kl7f"><input type="number" id="ti_7-1" class="tableInput" onkeyup="checkTableInput(this);" disabled></td>
+                            <td class="tg-kl7f"><input type="number" id="ti_7-2" class="tableInput" onkeyup="checkTableInput(this);" disabled></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-kl7f"><br>  40<br>  </td>
+                            <td class="tg-kl7f"><input type="number" id="ti_8-0" class="tableInput" onkeyup="checkTableInput(this);" disabled></td>
+                            <td class="tg-kl7f"><input type="number" id="ti_8-1" class="tableInput" onkeyup="checkTableInput(this);" disabled></td>
+                            <td class="tg-kl7f"><input type="number" id="ti_8-2" class="tableInput" onkeyup="checkTableInput(this);" disabled></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="warningContainer" class="noshow">
+            <div id="warningMessageContainer">
+                <p id="warningMessage">Warning Message</p>
+            </div>
+            <div id="warningResetContainer">
+                <button type="button" id="resetButton" onClick="resetStep();">Reset step</button>
+            </div>
+        </div>
+        <div id="completeContainer" class="noshow">
+            <div id="completeMask"></div>
+            <div id="completeMessageContainer">
+                <div id="completeMessageTitleContainer">
+                    <p id="completeMessageTitle">Experiment Complete!</p>
+                </div>
+                <div id="completeMessageMarksContainer">
+                    <p id="completeMessageMarksText">Total Marks: </p>
+                    <p id="completeMessageMarks">10/10</p>
+                    <button id="restartExperimentBtn" class="endBtn" onclick="restartExperimentClick()">Restart</button>
+                    <button id="restartExperimentNoProcedureBtn" class="endBtn" onclick="restartExperimentClickNoProcedure()">Restart with no steps</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

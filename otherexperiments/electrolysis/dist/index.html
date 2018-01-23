@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <script src="./main.bundle.js"></script>
+        <link rel="stylesheet" href="./main.css">
+    </head>
+    <body>
+        <div id="equipmentContainer">
+            <!-- CuCl2 = Copper (II) Chloride Solution -->
+            <div id="cuCl2Container" class="equipment_row1 cuCl2_draggable cuCl2_drag-drop">
+                <img id="beakerImg" src="./images/temp/placeHolder.png">
+            </div>
+            <div id="carbonRod1Container" class="equipment_row1 carbonRod carbonRod_drag-drop">
+                <img id="beakerImg" src="./images/temp/placeHolder.png">
+                <div id="crocClip1Dropzone" class="crocClipDropzone noshow"></div>
+                <p id="carbonRod1Charge" class="chargeIndicator">+</p>
+            </div>
+            <div id="carbonRod2Container" class="equipment_row1 carbonRod carbonRod_drag-drop">
+                <img id="beakerImg" src="./images/temp/placeHolder.png">
+                <div id="crocClip2Dropzone" class="crocClipDropzone noshow"></div>
+                <p id="carbonRod2Charge" class="chargeIndicator">-</p>
+            </div>
+            <div id="crocClip1Container" class="equipment_row1 crocClip crocClip1_drag-drop">
+                <img id="beakerImg" src="./images/crocClips/CROCK_CLIPS-01.png">
+                <p id="crocClip1Charge" class="chargeIndicator">+</p>
+            </div>
+            <div id="crocClip2Container" class="equipment_row1 crocClip crocClip2_drag-drop">
+                <img id="beakerImg" src="./images/crocClips/CROCK_CLIPS-01.png">
+                <p id="crocClip2Charge" class="chargeIndicator">-</p>
+            </div>
+            <div id="powerSupplyContainer" class="equipment_row1">
+                <div id="powerSupplyScreenContainer">
+                    <p id="powerSupplyVolts">0V</p>
+                </div>
+                <div id="powerSupplyDialContainer">
+                    <div id="powerSupplyDialRotator">
+                        <div id="powerSupplyDialPointer">
+                            <div id="powerSupplyDialPointerArrow"></div>
+                        </div>
+                        <div id="powerSupplyDialBody"></div>
+                    </div>
+                    <div id="powerSupplyDialNotch0V" class="powerSupplyDialNotch">0</div>
+                    <div id="powerSupplyDialNotch1V" class="powerSupplyDialNotch">1</div>
+                    <div id="powerSupplyDialNotch2V" class="powerSupplyDialNotch">2</div>
+                    <div id="powerSupplyDialNotch3V" class="powerSupplyDialNotch">3</div>
+                    <div id="powerSupplyDialNotch4V" class="powerSupplyDialNotch">4</div>
+                    <div id="powerSupplyDialNotch5V" class="powerSupplyDialNotch">5</div>
+                </div>
+                <button id="powerSupplyOnSwitch" type="submit" onClick="isOn();"></button>
+            </div>
+            <div id="tweezerLitmusContainer" class="equipment_row1">
+                <div id="litmusContainer"></div>
+                <div id="tweezersContainer"></div>
+            </div>
+        </div>
+        <div id="beakerContainer" class="equipment_row1">
+            <img id="beakerImg" src="./images/beaker/Beaker-01.png">
+            <div id="cuCl2Dropzone" class="cuCl2_dropzone"></div>
+            <div id="carbonRodDropzone" class=""></div>
+            <p id="beakerLabel" class="label">Volume: <span id="volumeHighlight">0cm³</span></p>
+        </div>
+        <div id="stepsContainer">
+            <!-- Each 'step' div has the format:
+                  -stepNoContainer div
+                    ->stepNo p (the step number)
+                  -stepDescContainer div
+                    ->stepDesc p (the step's description)
+                  -stepResultContainer div
+                    ->stepResult img (the tick that will appear once the step is complete)
+                  -stepCompleteMask div (the mask that appears on top of a step when it's completed (green), or when it has failed (red))
+            -->
+            <div id="stepsTitleContainer">
+                <p id="stepsTitle">Experiment Procedure</p>
+            </div>
+            <div class="step" id="step1">
+                <div class="stepNoContainer">
+                    <p class="stepNo">1.</p>
+                </div>
+                <div class="stepDescContainer">
+                    <p class="stepDesc">Pour copper (II) chloride solution into the beaker to <span class="boldDesc">50cm³</span>.</p>
+                </div>
+                <div class="stepResultContainer">
+                    <img class="stepResult" src="./images/other/empty.png">
+                </div>
+                <div class="stepCompleteMask"></div>
+            </div>
+            <div id="stepLineBreak1" class="stepLineBreak noshow"></div>
+            <div class="step noshow" id="step2">
+                <div class="stepNoContainer">
+                    <p class="stepNo">2.</p>
+                </div>
+                <div class="stepDescContainer">
+                    <p class="stepDesc">Insert the carbon rods, which <span class="boldDesc">must not</span> touch each other.</p>
+                </div>
+                <div class="stepResultContainer">
+                    <img class="stepResult" src="./images/other/empty.png">
+                </div>
+                <div class="stepCompleteMask nohighlight"></div>
+            </div>
+            <div id="stepLineBreak2" class="stepLineBreak noshow"></div>
+            <div class="step noshow" id="step3">
+                <div class="stepNoContainer">
+                    <p class="stepNo">3.</p>
+                </div>
+                <div class="stepDescContainer">
+                    <p class="stepDesc">Attach the crocodile leads to the end of the rods.</p>
+                </div>
+                <div class="stepResultContainer">
+                    <img class="stepResult" src="./images/other/empty.png">
+                </div>
+                <div class="stepCompleteMask nohighlight"></div>
+            </div>
+            <div id="stepLineBreak3" class="stepLineBreak noshow"></div>
+            <div class="step noshow" id="step4">
+                <div class="stepNoContainer">
+                    <p class="stepNo">4.</p>
+                </div>
+                <div class="stepDescContainer">
+                    <p class="stepDesc">Select 4V on the power supply, and <span class="boldDesc">then</span> switch it on.</p>
+                </div>
+                <div class="stepResultContainer">
+                    <img class="stepResult" src="./images/other/empty.png">
+                </div>
+                <div class="stepCompleteMask nohighlight"></div>
+            </div>
+            <div id="stepLineBreak4" class="stepLineBreak noshow"></div>
+            <div class="step noshow" id="step5">
+                <div class="stepNoContainer">
+                    <p class="stepNo">5.</p>
+                </div>
+                <div class="stepDescContainer">
+                    <p class="stepDesc">Use tweezers to hold a piece of blue litmus paper in the solution next to the positive electrode. What is this element? Write it into the table.</p>
+                </div>
+                <div class="stepResultContainer">
+                    <img class="stepResult" src="./images/other/empty.png">
+                </div>
+                <div class="stepCompleteMask nohighlight"></div>
+            </div>
+            <div id="stepLineBreak5" class="stepLineBreak noshow"></div>
+            <div class="step noshow" id="step6">
+                <div class="stepNoContainer">
+                    <p class="stepNo">6.</p>
+                </div>
+                <div class="stepDescContainer">
+                    <p class="stepDesc">Once 5 minutes have passed, switch off the power supply. Is there evidence of a metal coating on the negative electrode? What is it? Record this result into the table.</p>
+                </div>
+                <div class="stepResultContainer">
+                    <img class="stepResult" src="./images/other/empty.png">
+                </div>
+                <div class="stepCompleteMask nohighlight"></div>
+            </div>
+        </div>
+        <div id="jumpToStep">
+            <input type="text" id="jumpToStepText" style="position: fixed;right: 5px; top: 567px;width: 92px">
+            <button id="jumpToStepBtn" style="position: fixed;right: 5px;top: 593px">Jump to step</button>
+        </div>
+        <div id="helpContainer">
+            <button type="button" id="helpButton" onClick="toggleHelp();">
+                <img id="helpImg" src="./images/other/helpicon.png">
+            </button>
+            <div id="helpTitleContainer" class="noshow">
+                <p id="helpTitle">Help</p>
+            </div>
+            <div id="helpContentContainer" class="noshow">
+                <p id="helpContent"></p>
+            </div>
+        </div>
+        <button type="submit" id="tableButton" onClick="toggleTable();" disabled>table</button>
+        <div id="tableContainer" class="noshow">
+            <div id="tableTitleContainer" class="tableDragHandle">
+                <p id="tableTitle">Experiment Table</p>
+            </div>
+            <div id="tableContentContainer">
+                <!--Code generated from tablesgenerator.com/html_tables-->
+                <div class="tg-wrap">
+                    <table class="tg" style="undefined;table-layout: fixed; width: 100%">
+                    <colgroup>
+                        <col style="width: 116.00463px">
+                        <col style="width: 173.00463px">
+                        <col style="width: 190.00463px">
+                    </colgroup>
+                    <tr>
+                        <th class="tg-s6z2" rowspan="2">Solution<br></th>
+                        <th class="tg-baqh">Positive electrode (anode)</th>
+                        <th class="tg-baqh">Negative electrode (cathode)</th>
+                    </tr>
+                    <tr>
+                        <td class="tg-uqo3" colspan="2">Element formed</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-baqh">Copper (II)<br>Chloride</td>
+                        <td class="tg-yw4l"><input type="text" id="ti_0-0" class="tableInput" onkeyup="checkTableInput(this);"></td>
+                        <td class="tg-yw4l"><input type="text" id="ti_0-1" class="tableInput" onkeyup="checkTableInput(this);" disabled></td>
+                    </tr>
+                    <tr>
+                        <td class="tg-baqh">Copper (II)<br>Sulfate</td>
+                        <td class="tg-yw4l"><input type="text" id="ti_1-0" class="tableInput" onkeyup="checkTableInput(this);" disabled></td>
+                        <td class="tg-yw4l"><input type="text" id="ti_1-1" class="tableInput" onkeyup="checkTableInput(this);" disabled></td>
+                    </tr>
+                    <tr>
+                        <td class="tg-baqh">Sodium<br>Chloride</td>
+                        <td class="tg-yw4l"><input type="text" id="ti_2-0" class="tableInput" onkeyup="checkTableInput(this);" disabled></td>
+                        <td class="tg-yw4l"><input type="text" id="ti_2-1" class="tableInput" onkeyup="checkTableInput(this);" disabled></td>
+                    </tr>
+                    <tr>
+                        <td class="tg-baqh">Sodium<br>Sulfate</td>
+                        <td class="tg-yw4l"><input type="text" id="ti_3-0" class="tableInput" onkeyup="checkTableInput(this);" disabled></td>
+                        <td class="tg-yw4l"><input type="text" id="ti_3-1" class="tableInput" onkeyup="checkTableInput(this);" disabled></td>
+                    </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="warningContainer" class="noshow">
+            <div id="warningMessageContainer">
+                <p id="warningMessage">Warning Message</p>
+            </div>
+            <div id="warningResetContainer">
+                <button type="button" id="resetButton" onClick="resetStep();">Reset step</button>
+            </div>
+        </div>
+        <div id="completeContainer" class="noshow">
+            <div id="completeMask"></div>
+            <div id="completeMessageContainer">
+                <div id="completeMessageTitleContainer">
+                    <p id="completeMessageTitle">Experiment Complete!</p>
+                </div>
+                <div id="completeMessageMarksContainer">
+                    <p id="completeMessageMarksText">Total Marks: </p>
+                    <p id="completeMessageMarks">10/10</p>
+                    <button id="restartExperimentBtn" class="endBtn" onclick="restartExperimentClick()">Restart</button>
+                    <button id="restartExperimentNoProcedureBtn" class="endBtn" onclick="restartExperimentClickNoProcedure()">Restart with no steps</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

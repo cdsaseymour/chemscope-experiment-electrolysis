@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <script src="./main.bundle.js"></script>
+        <link rel="stylesheet" href="./experiment.css">
+    </head>
+    <body>
+        <div class="container">
+            <div id="clampDropzone" class="clamp_dropzone noshow">
+                <p id="clampDropzoneLabel">Working Area</p>
+            </div>
+            <div id="buretteDropzone" class="burette_dropzone"></div>
+            <div id="funnelDropzone" class="funnel_dropzone"></div>
+            <div id="sulfacidDropzone" class="sulfacid_dropzone"></div>
+            <div id="flaskDropzone" class="flask_dropzone"></div>
+            <div id="clampContainer" class="clamp_drag-drop">
+                <img id="clampImg" src="./images/clamp/burettestandandclamp.png">
+                <div id="colourChartContainer" class="noshow">
+                    <img id="colourChartImg" src="./images/other/colourchart.png">
+                </div>
+                <div id="questions" class="noshow">
+                <div class="questionContainer">
+                    <div id="questionTextContainer">
+                        <p class="question">What is the reading on the burette scale (in mL)?</p>
+                    </div>
+                    <div id="questionAnswerContainer">
+                        <input type="text" id="questionAnswer" class="questionText">
+                        <button type="button" class="questionSubmit" onclick="checkQuestionAnswer()">submit</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div id="buretteContainer" class="burette_drag-drop">
+                <img id="buretteImg" src="./images/burette/burette.png">
+                <p id="buretteVolumeMarker" class="noshow">0cm³</p>
+                <p id="tapState" class="noshow">Open</p>
+                <label id="tapClick" class="noshow"><input type="checkbox" class="noshow" onclick="toggleTapState()"/></label>
+            </div>
+            <div id="funnelContainer" class="funnel_drag-drop">
+                <img id="funnelImg" src="./images/funnel/funnel.png">
+            </div>
+            <div id="flaskContainer" class="flask_draggable flask_drag-drop pipette-flask_dropzone">
+                <img id="flaskImg" src="./images/conicalflask/conicalflask.png">
+                <p id="flaskNote" class=""><span id="flaskVolume">0</span>cm³</p>
+                <div id="methylorangeDropzone" class="methylorange_dropzone noshow"></div>
+            </div>
+            <div id="equipmentContainer">
+                <div id="naohContainer" class="pipette-naoh_dropzone">
+                    <img id="naohImg" class="chemical" src="./images/chemicals/sodiumhydroxide.png">
+                </div>
+                <div id="sulfacidContainer" class="sulfacid_drag-drop pipette-sulfacid_dropzone" data-inDropzone="false">
+                    <img id="sulfImg" class="chemical" src="./images/chemicals/sulfuricacid.png">
+                </div>
+                <div id="methylorangeContainer" class="pipette-methylorange_dropzone" data-inDropzone="false">
+                    <img id="methylImg" class="chemical" src="./images/chemicals/methylorange.png">
+                </div>
+            </div>
+            <div id="pipetteContainer" class="pipette_draggable pipette_drag-drop" data-full="false">
+                <img id="pipetteImg" src="./images/pipette/pipette.png">
+            </div>
+            <div id="stepsContainer">
+                <div id="stepsTitleContainer">
+                    <p id="stepNo">1.</p>
+                    <p id="stepsTitle">Experiment Procedure</p>
+                </div>
+                <div class="step" id="stepContainer">
+                    <div class="stepDescContainer">
+                        <p id="stepDesc">Only using the pipette, put exactly 25cm³ sodium hydroxide solution into the conical flask. You do not need to move the flask to complete this step.</p>
+                    </div>
+                    <div id="stepFailMask" class="noshow"></div>
+                    <div id="helpContainer">
+                        <button type="button" id="helpButton" onClick="toggleHelp();">
+                        </button>
+                        <div id="helpTitleContainer" class="noshow">
+                            <p id="helpTitle">Helpful Hint</p>
+                        </div>
+                        <div id="helpContentContainer" class="noshow">
+                            <p id="helpContent"></p>
+                        </div>
+                    </div>
+                </div>
+                <div id="stepLineBreak1" class="stepLineBreak"></div>
+                <div class="stepCompleteBox noshow" id="step1CompleteBox">
+                    <div class="stepCompleteNoContainer">
+                        <p class="stepCompleteNo">1.</p>
+                    </div>
+                    <div class="stepCompleteTickContainer">
+                        <img class="stepResult" src="./images/other/greentick.gif">
+                    </div>
+                    <div class="stepCompleteBoxMask"></div>
+                </div>
+                <div class="stepCompleteBox noshow" id="step2CompleteBox">
+                    <div class="stepCompleteNoContainer">
+                        <p class="stepCompleteNo">2.</p>
+                    </div>
+                    <div class="stepCompleteTickContainer">
+                        <img class="stepResult" src="./images/other/greentick.gif">
+                    </div>
+                    <div class="stepCompleteBoxMask"></div>
+                </div>
+                <div class="stepCompleteBox noshow" id="step3CompleteBox">
+                    <div class="stepCompleteNoContainer">
+                        <p class="stepCompleteNo">3.</p>
+                    </div>
+                    <div class="stepCompleteTickContainer">
+                        <img class="stepResult" src="./images/other/greentick.gif">
+                    </div>
+                    <div class="stepCompleteBoxMask"></div>
+                </div>
+                <div class="stepCompleteBox noshow" id="step4CompleteBox">
+                    <div class="stepCompleteNoContainer">
+                        <p class="stepCompleteNo">4.</p>
+                    </div>
+                    <div class="stepCompleteTickContainer">
+                        <img class="stepResult" src="./images/other/greentick.gif">
+                    </div>
+                    <div class="stepCompleteBoxMask"></div>
+                </div>
+                <div class="stepCompleteBox noshow" id="step5CompleteBox">
+                    <div class="stepCompleteNoContainer">
+                        <p class="stepCompleteNo">5.</p>
+                    </div>
+                    <div class="stepCompleteTickContainer">
+                        <img class="stepResult" src="./images/other/greentick.gif">
+                    </div>
+                    <div class="stepCompleteBoxMask"></div>
+                </div>
+                <div class="stepCompleteBox noshow" id="step6CompleteBox">
+                    <div class="stepCompleteNoContainer">
+                        <p class="stepCompleteNo">6.</p>
+                    </div>
+                    <div class="stepCompleteTickContainer">
+                        <img class="stepResult" src="./images/other/greentick.gif">
+                    </div>
+                    <div class="stepCompleteBoxMask"></div>
+                </div>
+            </div>
+            <div id="jumpToStep">
+                <input type="text" id="jumpToStepText" style="position: fixed;right: 34.83754512635379vw; bottom: 0.7874015748031495vh;width: 15px">
+                <button id="jumpToStepBtn" style="position: fixed;right: 27.346570397111915vw;bottom: 0.7874015748031495vh;width: 7.03971119133574vw;font-size: 1.1732851985559567vw;height: 3.3070866141732282vh;padding: 0">Go to step</button>
+            </div>
+            <div id="warningContainer" class="noshow">
+                <div id="warningMessageContainer">
+                    <p id="warningMessage">Warning Message</p>
+                </div>
+                <div id="warningResetContainer">
+                    <button type="button" id="resetButton" onClick="resetStep();">Reset step</button>
+                </div>
+            </div>
+            <div id="completeContainer" class="noshow">
+                    <div id="completeMask"></div>
+                    <div id="completeMessageContainer">
+                        <div id="completeMessageTitleContainer">
+                            <p id="completeMessageTitle">Experiment Complete!</p>
+                        </div>
+                        <div id="completeMessageMarksContainer">
+                            <p id="completeMessageMarksText">Total Marks: </p>
+                            <p id="completeMessageMarks">10/10</p>
+                            <button id="restartExperimentBtn" class="endBtn" onclick="restartExperimentClick()">Restart</button>
+                            <button id="restartExperimentNoProcedureBtn" class="endBtn" onclick="restartExperimentClickNoProcedure()">Restart with no steps</button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </body>
+</html>

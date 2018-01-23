@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Flame Test</title>    
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <script src="./main.bundle.js"></script>
+        <link rel="stylesheet" href="./main.css">    
+    </head>
+    <body>
+        <div class="container dropzone">
+            <div class="red flame"></div>
+            <div class="orange flame"></div>
+            <div class="yellow flame"></div>
+            <div class="white flame"></div>
+        </div>
+        <img id="bunsen" src="./images/equipment/bunsenburner.png">
+        <div id="chemicals">
+            <div id="lithium" data-chemical="Li" data-hint="0" data-ans="false" class="chemical draggable drag-drop">
+                <img src="./images/chemicals/lithium/lithium.png">
+            </div>
+            <div id="sodium" data-chemical="Na" data-hint="0" data-ans="false" class="chemical draggable drag-drop">
+                <img src="./images/chemicals/sodium/sodium.png">
+            </div>
+            <div id="potassium" data-chemical="K" data-hint="0" data-ans="false" class="chemical draggable drag-drop">
+                <img src="./images/chemicals/potassium/potassium.png">
+            </div>
+            <div id="calcium" data-chemical="Ca" data-hint="1" data-ans="false" class="chemical draggable drag-drop">
+                <img src="./images/chemicals/calcium/calcium.png">
+            </div>
+            <div id="barium" data-chemical="Ba" data-hint="1" data-ans="false" class="chemical draggable drag-drop">
+                <img src="./images/chemicals/barium/barium.png">
+            </div>
+        </div>
+        <div id="flameColour_container" class="noshow">
+            <h2 id="flameColour">Crimson Flame</h2>
+        </div>
+        <div id="stepsContainer">
+<!--
+             Each 'step' div has the format:
+                  -stepNoContainer div
+                    ->stepNo p (the step number)
+                  -stepDescContainer div
+                    ->stepDesc p (the step's description)
+                  -stepResultContainer div
+                    ->stepResult img (the tick that will appear once the step is complete)
+                  -stepCompleteMask div (the mask that appears on top of a step when it's completed (green), or when it has failed (red))
+            
+-->
+            <div id="stepsTitleContainer">
+                <p id="stepsTitle">Experiment Procedure</p>
+            </div>
+            <div id="stepsMarksContainer">
+                <p id="stepsMarks">(Each wrong question will lose you a mark)</p>
+            </div>
+            <div class="step" id="step1">
+                <div class="stepNoContainer">
+                    <p class="stepNo">1.</p>
+                </div>
+                <div class="stepDescContainer">
+                    <p class="stepDesc">Drag each element one-by-one over the flame, and input the correct answer in the answer box.
+                    </p>
+                </div>
+                <div class="stepResultContainer">
+                    <img class="stepResult" src="./images/other/empty.png">
+                </div>
+                <div class="stepCompleteMask"></div>
+            </div>
+            <div class="step" id="step2">
+                <div class="stepNoContainer">
+                    <p class="stepNo">2.</p>
+                </div>
+                <div class="stepDescContainer">
+                    <p class="stepDesc">Answer the 3 questions below.
+                    </p>
+                </div>
+                <div class="stepResultContainer">
+                    <img class="stepResult" src="./images/other/empty.png">
+                </div>
+                <div class="stepCompleteMask nohighlight"></div>
+            </div>
+        </div>
+        <div id="hint_container">
+            <button type="button" id="hint_titlebtn" onClick="toggleHint();" disabled>
+                <span id="hint_title">Hint</span>
+            </button>
+            <div id="hint_content">
+                <p id="hint_contentp">content</p>
+            </div>
+        </div>
+        <div id="answer_container" class="noshow">
+            <div id="answer_title">
+                <h2 id="answer_titleh1">What metal ion is this?</h2>
+            </div>
+            <div id="answer_content">
+                <input id="answer_text" type="text" name="metalionanswer" placeholder="Enter a metal ion...">
+                <button type="button" id="answer_submit" onclick="checkAnswer()">
+                    submit
+                </button>
+                <img id="answer_result" src="./images/other/redcross.png">
+            <!--<p id="answer_result"></p>-->
+            </div>
+        </div>
+        <div id="questions_container" class="noshow">  
+            <div id="question_one" class="questioncontainer">
+                <p class="question">Question 1: What metal ion is the most reactive?</p>
+                <input type="text" class="question_text" id="questionone_text">
+                <button type="button" class="question_submit" onclick="checkQuestionAnswer(1)">submit</button>
+                <img class="question_result" id="questionone_result" src="./images/other/empty.png" border="0">
+            </div>
+            <div id="question_two" class="questioncontainer">
+                <p class="question">Question 2: What metal ion is the least reactive?</p>
+                <input type="text" class="question_text" id="questiontwo_text">
+                <button type="button" class="question_submit" onclick="checkQuestionAnswer(2)">submit</button>
+                <img class="question_result" id="questiontwo_result" src="./images/other/empty.png">
+            </div>
+            <div id="question_three" class="questioncontainer">
+                <p class="question">Question 3: A metal + non-metal forms a...?</p>
+                <input type="text" class="question_text" id="questionthree_text">
+                <button type="button" class="question_submit" onclick="checkQuestionAnswer(3)">submit</button>
+                <img class="question_result" id="questionthree_result" src="./images/other/empty.png">
+            </div>
+        </div>
+        <div id="completeContainer" class="noshow">
+                <div id="completeMask"></div>
+                <div id="completeMessageContainer">
+                    <div id="completeMessageTitleContainer">
+                        <p id="completeMessageTitle">Experiment Complete!</p>
+                    </div>
+                    <div id="completeMessageMarksContainer">
+                        <p id="completeMessageMarksText">Total Marks: </p>
+                        <p id="completeMessageMarks">10/10</p>
+                    </div>
+                </div>
+            </div>
+    </body>
+</html>

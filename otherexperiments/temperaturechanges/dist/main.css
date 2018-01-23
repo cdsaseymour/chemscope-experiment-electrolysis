@@ -1,0 +1,629 @@
+/* Reset code for CSS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+body {
+    font-family: "Arial";
+}
+
+img {
+    image-rendering: crisp-edges;
+}
+
+/* Steps code */
+#stepsContainer {
+    position: fixed;
+    right: 5px;
+    top: 5px;
+    width: 450px;
+    height: auto;
+    background-color: #f9eb9a;
+}
+
+#stepsTitleContainer {
+    width: 100%;
+    height: 35px;
+    text-align: center;
+    font-size: 26px;
+    background-color: #EBB124;
+}
+
+#stepsTitle {
+    position: relative;
+    top: 5px;
+}
+
+.step {
+    position: relative;
+    width: 444px;
+    height: 50px;
+    margin-left: 3px;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    background-color: #f7c447;
+    border-radius: 3px;
+}
+
+.stepNoContainer {
+    position: relative;
+    width: 30px;
+    height: 50px;
+}
+
+.stepNo {
+    position: relative;
+    font-size: 30px;
+    top: 10px;
+    left: 5px;
+}
+
+.stepDescContainer {
+    position: relative;
+    display: table;
+    width: 350px;
+    height: 50px;
+    margin-left: 40px;
+    top: -50px;
+    line-height: 50px;
+}
+
+.stepDesc {
+    position: relative;
+    font-size: 12px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}
+
+.stepResultContainer {
+    position: relative;
+    width: 64px;
+    height: 50px;
+    margin-left: 385px;
+    top: -100px;
+}
+
+.stepResult {
+    width: 50px;
+    height: 50px
+
+}
+
+.stepCompleteMask {
+    position: relative;
+    width: 444px;
+    height: 50px;
+    background-color: #70ff72;
+    opacity: 0;
+    top: -150px;
+    border-radius: 3px;
+}
+
+.stepCompleteMask.stepComplete {
+    opacity: 0.3;
+    background-color: #70ff72;
+}
+
+.stepCompleteMask.stepFail {
+    opacity: 0.3;
+    background-color: #ff1012;
+}
+
+.stepCompleteMask.nohighlight {
+    opacity: 0.3;
+    background-color: #000;
+}
+
+.stepLineBreak {
+    background-color: #fff;
+    width: 100%;
+    height: 20px;
+}
+
+/* Help code */
+#helpContainer {
+    position: fixed;
+    top: 495px;
+    right: 5px;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    background-color: none;
+}
+
+#helpContainer.helpOpen {
+    width: 450px;
+    height: 150px;
+    transition: width 1s, height 1s;
+    background-color: #f9eb9a;
+}
+
+#helpButton {
+    float: right;
+    background-color: #f9eb9a;
+    border: none;
+}
+
+#helpButton:hover {
+    background-color: #f7c447;
+}
+
+#helpImg {
+    width: 32px;
+    height: 32px;
+}
+
+#helpTitleContainer {
+    width: 100%;
+    height: 37px;
+    background-color: #f7c447;
+    text-align: center;
+    line-height: 37px;
+}
+
+#helpTitle {
+    font-size: 24px;
+}
+
+#helpContentContainer {
+    margin: 5px;
+}
+
+#helpContent {
+    font-size: 20px;
+}
+
+.noshow {
+    display: none !important;
+}
+
+/*Warning Message Code*/
+
+#warningContainer {
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 500px;
+    height: 50px;
+    bottom: 150px;
+/*    background-color: #EBB124;*/
+    background-color: #ff1012;
+}
+
+#warningMessageContainer {
+    display: table;
+    position: relative;
+    width: 400px;
+    height: 100%;
+    float: left;
+}
+
+#warningResetContainer {
+    position: relative;
+    width: 100px;
+    height: 100%;
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#warningMessage {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 3px;
+}
+
+/* Experiment Complete Code */
+#completeContainer {
+    display: initial;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+#completeContainer.noshow {
+    display: none;
+}
+
+#completeMessageContainer {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 350px;
+    height: 145px;
+    background-color: #f9eb9a;
+    border-radius: 3px;
+}
+
+#completeMessageTitleContainer {
+    display: table;
+    width: 100%;
+    height: 35px;
+    text-align: center;
+    font-size: 26px;
+    background-color: #EBB124;
+}
+
+#completeMessageTitle {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#completeMessageMarksText {
+    position: absolute;
+    font-size: 24px;
+    top: 32%;
+    left: 15px;
+} 
+
+#completeMessageMarks {
+    position: absolute;
+    font-size: 64px;
+    right: 15px;
+    top: 32%;
+}
+
+#restartExperimentBtn {
+    left: 2px;
+    width: 144px;
+}
+
+#restartExperimentNoProcedureBtn {
+    right: 2px;
+    width: 200px;
+}
+
+.endBtn {
+    position: absolute;
+    bottom: 2px;
+    background-color: #EBB124;
+    border: none;
+    height: 25px;
+    border-radius: 3px;
+}
+
+.endBtn:hover {
+    background-color: #bc8d1c;
+}
+
+.endBtn:active {
+    background-color: #755812;
+}
+
+/*--- Equipment Code ---*/
+
+.equipment_row1 {
+    position: relative;
+    margin: 10px 10px;
+}
+
+.equipment_row2 {
+    position: absolute;
+    margin: 10px 0px 10px 190px;
+    top: 0;
+}
+
+#hclContainer {
+    width: 111.25px;
+    height: 250px;
+    background-color: #f00;
+}
+
+#naohContainer {            
+    width: 111.25px;
+    height: 250px;
+    background-color: #0f0;
+}
+
+#polystyreneCupContainer {
+    width: 125px;
+    height: 161.75px;
+    background-color: #D7D7D7;
+    z-index 1;
+}
+
+    #measuringCylinderDropzone {
+        position: absolute;
+        top: -90px;
+        left: -70px;
+        width: 200px;
+        height: 150px;
+    }
+
+    #naohVolumeLabel {
+        position: absolute;
+        bottom: 50%;
+        left: 128px;
+        text-align: center;
+        width: max-content;
+        padding: 3px;
+    }
+
+    #naohVolume {
+        font-weight: bold;
+        color: #f44336;
+        font-size: 16px;
+    }
+
+#beakerContainer {
+    width: 131px;
+    height: 170px;
+    background-color: #ADE0FF;
+    opacity: 0.5;
+    z-index: 2;
+}
+
+    #polystyreneCupDropzone {
+        position: absolute;
+        top: 0px;
+        left: 3px;
+        width: 125px;
+        height: 161.75px;
+    }
+
+#measuringCylinder50Container {
+    width: 60.55px;
+    height: 273.35px;
+    background-color: #0000ff;
+}
+
+    #hclDropzone {
+        position: absolute;
+        top: -90px;
+        left: -130px;
+        width: 200px;
+        height: 150px;
+    }
+
+#measuringCylinder10Container {
+    top: 283.35px;
+    width: 45.4125px;
+    height: 205.0125px;
+    background-color: #00aaff;
+}
+
+    #naohDropzone {
+        position: absolute;
+        top: -90px;
+        left: -130px;
+        width: 200px;
+        height: 150px;
+    }
+
+#thermometerContainer {
+    top: 498.3625px;
+    width: 20px;
+    height: 250px;
+    background-color: #ff00ff;
+}
+
+    #thermometerLabel {
+        left: 20px;
+        top: 2px;
+    }
+
+#workingArea {
+    position: absolute;
+    margin: 25% auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 250px;
+    height: 200px;
+    border: 1px solid #aaa;
+    z-index: -1;
+}
+
+    #beakerDropzone {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        width: 131px;
+        height: 170px;
+    }
+
+    #workingAreaLabel {
+        position: absolute;
+        bottom: -20px;
+        right: 0;
+        left: 0;
+        text-align: center;
+        color: #aaa;
+    }
+
+.label {
+    position: absolute;
+    background-color: #ffffff;
+    text-align: left;
+    color: #000000;
+    padding: 3px;
+    width: max-content;
+}
+
+/*--- table code ---*/
+#tableButton {
+    position: fixed;
+    right: 5px;
+    top: 650px;
+    width: 75px;
+    height: 30px;
+    background-color: #f9eb9a;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+}
+
+#tableButton:hover {
+    background-color: #f7c447;
+}
+
+#tableContainer {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 550px;
+    height: 371px;
+    background-color: #f9eb9a;
+    z-index: 3;
+}
+
+#tableTitleContainer {
+    width: 100%;
+    height: 37px;
+    background-color: #f7c447;
+    text-align: center;
+    line-height: 37px;
+}
+
+    #tableTitle {
+        font-size: 24px;
+    }
+
+#tableContentContainer {
+    width: 544px;
+    margin-left: 3px;
+    height: 331px;
+    background-color: #fff;
+}
+
+.tableInput {
+    position: relative;
+/*    width: 150%; */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    top: 1px;
+/*    left: -21px;*/
+    left: 10px;
+    border: none;
+    text-align: center;
+    font-size: 20px;
+}
+
+.tableInput.inputCorrect {
+    color: #70ff72;
+}
+
+.tableInput:disabled {
+    background-color: #fff;
+}
+
+/*--- Table code generated from tablesgenerator.com/html_tables ---*/
+.tg  {
+    border-collapse:collapse;
+    border-spacing:0;
+    border-color:#ccc;
+    margin:0px auto;
+}
+.tg td{
+    font-family:Arial, sans-serif;
+    font-size:14px;
+    padding:4px 20px;
+    border-style:solid;
+    border-width:1px;
+    overflow:hidden;
+    word-break:normal;
+    border-color:#ccc;
+    color:#333;
+    background-color:#fff;
+}
+.tg th{
+    font-family:Arial, sans-serif;
+    font-size:14px;
+    font-weight:normal;
+    padding:4px 20px;
+    border-style:solid;
+    border-width:1px;
+    overflow:hidden;
+    word-break:normal;
+    border-color:#ccc;
+    color:#333;
+    background-color:#f0f0f0;
+}
+.tg .tg-kl7f{
+    font-size:11px;
+    font-family:Arial, Helvetica, sans-serif !important;
+    vertical-align:top;
+}
+.tg .tg-su7x{
+    font-weight:bold;
+    font-size:11px;
+    font-family:Arial, Helvetica, sans-serif !important;
+    text-align:center;
+}
+.tg .tg-gror{
+    font-weight:bold;
+    font-size:11px;
+    font-family:Arial, Helvetica, sans-serif !important;
+    background-color:#efefef;
+    text-align:center;
+}
+@media screen and (max-width: 767px) {
+    .tg {
+        width: auto !important;
+    }
+    .tg col {
+        width: auto !important;
+    }
+    .tg-wrap {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: auto 0px;
+    }
+}

@@ -1,0 +1,772 @@
+/* Reset code for CSS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    font-family: "Arial";
+    line-height: 1;
+    background-color: white;
+    overflow: hidden;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+img {
+    image-rendering: crisp-edges;
+}
+
+/* Steps code */
+#stepsContainer {
+    position: fixed;
+    right: 0.45126353790613716vw;
+    top: 0.7874015748031495vh;
+    width: 36.101083032490976vw;
+    height: auto;
+    background-color: #f9eb9a;
+}
+
+#stepsTitleContainer {
+    width: 100%;
+    height: 5.511811023622047vh;
+    font-size: 2.3465703971119134vw;
+    background-color: #EBB124;
+}
+
+#stepsTitle {
+    text-align: center;
+    position: relative;
+    top: 0.7874015748031495vh;
+    font-weight: bold;
+}
+
+#stepNo {
+    position: absolute;
+    margin-top: 0.7874015748031495vh;
+    margin-bottom: 0.7874015748031495vh;
+    margin-right: 0.45126353790613716vw;
+    margin-left: 1.3537906137184115vw;
+    font-weight: bold;
+}
+
+.step {
+    position: relative;
+    width: 35.55956678700361vw;
+    min-height: 23.622047244094485vh;
+    margin-left: 0.27075812274368233vw;
+    margin-bottom: 0.4724409448818897vh;
+    margin-top: 0.4724409448818897vh;
+    background-color: #222;
+    border-radius: 3px;
+}
+
+.stepNoContainer {
+    position: relative;
+    width: 2.707581227436823vw;
+    height: 7.874015748031495vh;
+    line-height: 31.49606299212598vh;
+}
+
+.stepDescContainer {
+    position: relative;
+    display: table;
+    width: 31.859205776173287vw;
+    height: 7.874015748031495vh;
+    /* margin-left: 5px; */
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    line-height: 31.49606299212598vh;
+}
+
+#stepDesc {
+    position: relative;
+    color: #eee;
+    font-size: 2.3465703971119134vw;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 4.566929133858268vh;
+    padding-left: 0.45126353790613716vw;
+    padding-right: 0.45126353790613716vw;
+    padding-top: 0.7874015748031495vh;
+    padding-bottom: 0.7874015748031495vh;
+    font-family: "Segoe Print";
+}
+
+.stepResult {
+    width: 4.512635379061372vw;
+    height: 7.874015748031495vh
+}
+
+#stepFailMask {
+    position: absolute;
+    width: 35.55956678700361vw;
+    height: 100%;
+    background-color: #ff1012;
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    border-radius: 3px;
+    z-index: 1;
+}
+
+.stepLineBreak {
+    background-color: #fff;
+    width: 100%;
+    height: 3.149606299212598vh;
+}
+
+.stepCompleteBox {
+    position: relative;
+    width: 7.2202166064981945vw;
+    height: 7.874015748031495vh;
+    margin-left: 0.27075812274368233vw;
+    margin-bottom: 0.4724409448818897vh;
+    margin-top: 0.4724409448818897vh;
+    margin-right: 0.9025270758122743vw;
+    background-color: #f7c447;
+    border-radius: 3px;
+    float: left;
+}
+
+.stepCompleteNoContainer {
+    width: 2.707581227436823vw;
+    height: 100%;
+    line-height: 7.874015748031495vh;
+    float: left;
+    text-align: center;
+}
+
+.stepCompleteTickContainer {
+    width: 4.512635379061372vw;
+    height: 100%;
+    float: left;
+}
+
+.stepCompleteNo {
+    font-size: 2.707581227436823vw;
+}
+
+.stepCompleteBoxMask {
+    position: absolute;
+    width: 7.2202166064981945vw;
+    height: 100%;
+    background-color: #70ff72;
+    opacity: 0.3;
+    border-radius: 3px;
+}
+
+.stepCompleteBoxMask.stepComplete {
+    opacity: 0.3;
+    background-color: #70ff72;
+}
+
+/* Colour Chart Code */
+#colourChartContainer {
+    position: relative;
+    right: 11.732851985559567vw;
+    bottom: 9.448818897637794vh;
+    width: 11.732851985559567vw;
+    height: 6.299212598425196vh;
+}
+
+#colourChartImg {
+    width: 11.732851985559567vw;
+    height: 6.299212598425196vh;
+}
+
+/* Help code */
+#helpContainer {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 3.339350180505415vw;
+    height: 5.8267716535433065vh;
+    overflow: hidden;
+    z-index: 1;
+    border-radius: 3px;
+}
+
+#helpContainer.helpOpen {
+    width: 100%;
+    height: 100%;
+    transition: width 1s, height 1s;
+    background-color: #f9eb9a;
+/*
+    background-color: #222;
+    font-family: "Segoe Print";
+    color: #eee;
+*/
+}
+
+#helpButton {
+    position: absolute;
+    float: right;
+    border: none;
+    border-radius: 3px;
+    height: 5.8267716535433065vh;
+    width: 3.339350180505415vw;
+    background-color: #222;
+    background-image: url(./images/other/helpicon_yellow.png);
+    background-size: 2.707581227436823vw 4.724409448818897vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    bottom: 0;
+    right: 0;
+}
+
+#helpButton:hover {
+    background-color: #f9eb9a;
+    background-image: url(./images/other/helpicon_black.png);
+}
+
+#helpButton:focus {
+   outline: 0;
+}
+
+#helpImg {
+    width: 2.888086642599278vw;
+    height: 5.039370078740157vh;
+}
+
+#helpTitleContainer {
+    width: 100%;
+    height: 5.039370078740157vh;
+    text-align: center;
+    line-height: 5.039370078740157vh;
+    font-weight: bold;
+    margin-top: 0.7874015748031495vh;
+}
+
+#helpTitle {
+    font-size: 2.707581227436823vw;
+}
+
+#helpContentContainer {
+    margin-left: 0.45126353790613716vw;
+    margin-right: 0.45126353790613716vw;
+    margin-top: 0.7874015748031495vh;
+    margin-bottom: 0.7874015748031495vh;
+}
+
+#helpContent {
+    font-size: 2.0758122743682312vw;
+}
+
+/* Burette code */
+#buretteContainer {
+    position: absolute;
+    height: 50.70866141732283vh;
+    left: 23.465703971119133vw;
+    top: 2.3622047244094486vh;
+}
+
+#buretteImg {
+    height: 50.70866141732283vh;
+}
+
+#buretteVolumeMarker {
+    position: absolute;
+    left: 3.6101083032490973vw;
+    height: 1.4641288433382138vh;
+    text-align: center;
+    font-size: 1.444043321299639vw;
+    top: -1.574803149606299vh;
+    background-color: #b3b3b3;
+    padding-left: 0.27075812274368233vw;
+    padding-right: 0.27075812274368233vw;
+    padding-top: 0.4724409448818897vh;
+    padding-bottom: 0.4724409448818897vh;
+}
+
+#buretteVolumeMarker:after {
+    right: 100%;
+	top: 71%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(136, 183, 213, 0);
+	border-right-color: #808080;
+	border-width: 1.171303074670571vh 1.0764262648008611vw;
+	margin-top: -1.732283464566929vh;
+}
+
+#tapState {
+    position: relative;
+    left: 5.836575875486382vw;
+    top: -10.714285714285714vh;
+    font-size: 1.444043321299639vw;
+    background-color: #f44336;
+    text-align: center;
+    color: white;
+    padding-left: 0.27075812274368233vw;
+    padding-right: 0.27075812274368233vw;
+    padding-top: 0.4724409448818897vh;
+    padding-bottom: 0.4724409448818897vh;
+}
+
+#tapClick {
+    position: relative;
+    left: 3.4046692607003894vw;
+    top: -14.02116402116402vh;
+    width: 1.8953068592057762vw;
+    height: 3.968253968253968vh;
+    display: inline-block;
+    cursor: pointer;
+    background-color: #fff;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+/* Funnel Code */
+
+#funnelContainer {
+    position: absolute;
+    left: 27.075812274368232vw;
+    top: 2.3622047244094486vh;
+}
+
+#funnelImg {
+    width: 5.144404332129964vw;
+}
+
+/* Flask code */
+
+#flaskContainer {
+    width: 5.415162454873646vw;
+    height: 16.8503937007874vh;
+    position: absolute;
+    left: 16.064981949458485vw;
+    top: 75.2755905511811vh;
+}
+
+#flaskImg {
+    width: 6.415162vw;
+    height: 16.8503937007874vh;
+}
+
+#flaskNote {
+    position: relative;
+    left: 6.317689530685921vw;
+    top: -11.811023622047243vh;
+    font-size: 1.444043321299639vw;
+    background-color: #ffffff;
+    text-align: center;
+    color: #000000;
+    padding-left: 0.27075812274368233vw;
+    padding-right: 0.27075812274368233vw;
+    padding-top: 0.4724409448818897vh;
+    padding-bottom: 0.4724409448818897vh;
+    width: max-content;
+}
+
+#flaskVolume {
+    font-weight: bold;
+    color: #f44336;
+    font-size: 1.9855595667870036vw;
+}
+
+#clampContainer {
+    width: 10.830324909747292vw;
+    height: 49.92125984251968vh;
+    position: absolute;
+    left: 10.830324909747292vw;
+    top: 2.3622047244094486vh;
+}
+
+/*20% of original file size - 858x1402*/
+#clampImg {
+    width: 10.830324909747292vw;
+    height: 49.92125984251968vh;
+}
+
+#pipetteContainer {
+    width: 6.949458483754513vw;
+    height: 15.433070866141732vh;
+    position: absolute;
+    left: 9.47653429602888vw;
+    top: 76.06299212598425vh;
+}
+
+#pipetteImg {
+    width: 6.949458483754513vw;
+    height: 15.433070866141732vh;
+}
+
+/* Dropzone code */
+
+#clampDropzone {
+    position: absolute;
+    width: 11.101083032490974vw;
+    height: 51.96850393700787vh;
+    left: 0;
+    right: 11.732851985559567vw;
+    top: 31.81102362204724vh;
+    bottom: 0;
+    margin: auto;
+    background-color: rgba(119, 119, 119, 0.1);
+    border: 0;
+}
+
+#clampDropzone.clampEntered {
+    border: 3px solid rgba(0, 255, 0, 0.1);
+    background-color: rgba(0, 255, 0, 0.1);
+}
+
+#clampDropzoneLabel {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -3.149606299212598vh;
+    margin: auto;
+    text-align: center;
+    color: #000;
+    font-size: 1.444043321299639vw;
+}
+
+#buretteDropzone {
+    position: absolute;
+    width: 5.054151624548736vw;
+    height: 50.70866141732283vh;
+    left: 0px;
+    right: 6.949458483754513vw;
+    top: 0;
+    bottom: 7.716535433070866vh;
+    margin: auto;
+}
+
+#funnelDropzone {
+    position: absolute;
+    width: 3.7906137184115525vw;
+    height: 13.228346456692913vh;
+    left: 0;
+    right: 9.149623250807318vw;
+    top: 0;
+    bottom: 56.062992125984245vh;
+    margin: auto;
+}
+
+#sulfacidDropzone {
+    position: absolute;
+    width: 9.927797833935019vw;
+    height: 14.173228346456693vh;
+    left: 0;
+    right: 10.379061371841155vw;
+    top: 0;
+    bottom: 70.5511811023622vh;
+    margin: auto;
+}
+
+#flaskDropzone {
+    position: absolute;
+    width: 5.415162454873646vw;
+    height: 16.8503937007874vh;
+    left: 0;
+    right: 9.574007vw;
+    top: 61.41732283464567vh;
+    bottom: 0;
+    margin: auto;
+
+}
+
+#pipette-naohDropzone {
+    position: absolute;
+    left: 1.263537906137184vw;
+    top: 2.3622047244094486vh;
+    width: 7.851985559566787vw;
+    height: 22.04724409448819vh;
+}
+
+#pipette-flaskDropzone {
+    position: absolute;
+    width: 4.1516245487364625vw;
+    height: 13.070866141732282vh;
+}
+
+
+#methylorangeDropzone {
+    position: relative;
+    width: 7.9422382671480145vw;
+    height: 13.700787401574802vh;
+    top: -20.31496062992126vh;
+    left: -1.8953068592057762vw;
+}
+
+/* Equipment code */
+
+#equipmentContainer {
+    position: absolute;
+    left: 1.3537906137184115vw;
+    width: 7.851985559566787vw;
+    height: 100%;
+    top: 2.3622047244094486vh;
+}
+
+#naohContainer {
+    width: 7.31769vw;
+}
+
+#naohImg {
+    position: relative;
+    width: 7.31769vw;
+}
+
+#sulfacidContainer {
+    width: 8.31769vw;
+    height: 30.346457vh;
+}
+
+#sulfImg {
+    width: 8.31769vw;
+    height: 28.346456692913385vh;
+}
+
+#methylImg {
+    height: 29.763779527559052vh;
+}
+
+.chemical {
+    margin-bottom: 1.574803149606299vh;
+}
+
+.noshow {
+    display: none !important;
+}
+
+/* Question Code */
+
+#questions {
+    position: absolute;
+    right: 12.635379061371841vw;
+    width: 22.56317689530686vw;
+    bottom: 0;
+}
+
+#questions.noshow {
+    display: none;
+}
+
+#questionTextContainer {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 70%;
+    height: 100%;
+    float: left;
+}
+
+#questionAnswerContainer {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 30%;
+    height: 100%;
+    float: right;
+}
+
+.questionContainer {
+    width: 100%;
+    height: 12.598425196850393vh;
+    background-color: #EBB124;
+    border-radius: 5px;
+}
+
+.question {
+    position: relative;
+    left: 0.9025270758122743vw;
+    top: 1.574803149606299vh;
+    font-family: "Arial";
+    font-size: 1.8050541516245486vw;
+}
+
+.questionText {
+    position: relative;
+    top: 2.3622047244094486vh;
+    left: 1.3537906137184115vw;
+    height: 3.149606299212598vh;
+    width: 4.512635379061372vw;
+}
+
+.questionSubmit {
+    position: relative;
+    top: 2.3622047244094486vh;
+    left: 1.3537906137184115vw;
+    height: 4.094488188976378vh;
+    width: 4.8439181916038745vw;
+    font-size: 1.2917115177610332vmax;
+    border: 0.1076426264800861vw 0.14641288433382138vh solid #707070;
+    padding: 0;
+}
+
+/* Warning Message Code */
+
+#warningContainer {
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 45.12635379061372vw;
+    height: 7.874015748031495vh;
+    bottom: 23.622047244094485vh;
+    background-color: #ff1012;
+}
+
+#warningMessageContainer {
+    display: table;
+    position: relative;
+    width: 36.101083032490976vw;
+    height: 100%;
+    float: left;
+}
+
+#warningResetContainer {
+    position: relative;
+    width: 9.025270758122744vw;
+    height: 100%;
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#warningMessage {
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 0.45126353790613716vw;
+    padding-right: 0.45126353790613716vw;
+    padding-top: 0.7874015748031495vh;
+    padding-bottom: 0.7874015748031495vh;
+    font-size: 1.4981273408239701vw;
+    color: white;
+}
+
+#resetButton {
+    height: 3.255813953488372vh;
+    font-size: 1.2172284644194757vw;
+    padding: 0.15503875968992248vh 0.5617977528089888vw;
+}
+
+/* Experiment Complete Code */
+#completeContainer {
+    display: initial;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#completeContainer.noshow {
+    display: none;
+}
+
+#completeMessageContainer {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 31.588447653429604vw;
+    height: 22.834645669291337vh;
+    background-color: #f9eb9a;
+    border-radius: 3px;
+}
+
+#completeMessageTitleContainer {
+    display: table;
+    width: 100%;
+    height: 5.511811023622047vh;
+    text-align: center;
+    font-size: 2.3465703971119134vw;
+    background-color: #EBB124;
+}
+
+#completeMessageTitle {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    top: 0.7320644216691069vh;
+}
+
+#completeMessageMarksText {
+    position: absolute;
+    font-size: 2.1660649819494586vw;
+    top: 32%;
+    left: 1.3537906137184115vw;
+} 
+
+#completeMessageMarks {
+    position: absolute;
+    font-size: 5.776173285198556vw;
+    right: 1.3537906137184115vw;
+    top: 32%;
+}
+
+#restartExperimentBtn {
+    left: 0.18050541516245489vw;
+    width: 12.99638989169675vw;
+}
+
+#restartExperimentNoProcedureBtn {
+    right: 0.18050541516245489vw;
+    width: 18.050541516245488vw;
+}
+
+.endBtn {
+    position: absolute;
+    bottom: 0.31496062992125984vh;
+    background-color: #EBB124;
+    border: none;
+    height: 3.9370078740157477vh;
+    border-radius: 3px;
+    font-size: 1.8299246501614637vmax;
+    padding: 0;
+}
+
+.endBtn:hover {
+    background-color: #bc8d1c;
+}
+
+.endBtn:active {
+    background-color: #755812;
+}
